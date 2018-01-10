@@ -35,11 +35,11 @@ switch(expr->tipo) {
       //printf("%d\n",Int_codigo(expr->derecha));
       switch (expr->oper) {
         case '+':
-          printf("ADD\n");
+          //printf("ADD\n");
           return (Int_codigo(expr->izquierda) + Int_codigo(expr->derecha));
           break;
         case '*':
-          return (Int_codigo(expr->izquierda) + Int_codigo(expr->derecha));
+          return (Int_codigo(expr->izquierda) * Int_codigo(expr->derecha));
           break;
       }
       break;
