@@ -15,7 +15,7 @@ static void Gen_codigo_expresion(Expresion *expr) {
         case '+':
           printf("ADD\n");
           break;
-        case '-':
+        case '*':
           printf("MULT\n");
           break;
       }
@@ -23,22 +23,23 @@ static void Gen_codigo_expresion(Expresion *expr) {
   }
 }
 
-static void Int_codigo(Expresion *expr){
+static int Int_codigo(Expresion *expr){
 switch(expr->tipo) {
     case 'D':
-      //printf("PUSH %d\n",expr->valor);
-      return expr->valor
+      return expr->valor;
       break;
     case 'P':
-      //Gen_codigo_expresion(expr->izquierda);
-      //Gen_codigo_expresion(expr->derecha);
+      //Int_codigo(expr->izquierda);
+      //Int_codigo(expr->derecha);
+      //printf("%d\n",Int_codigo(expr->izquierda));
+      //printf("%d\n",Int_codigo(expr->derecha));
       switch (expr->oper) {
         case '+':
-          //printf("ADD\n");
-          Int_codigo(expr->izquierda) + Int_codigo(expr->derecha);
+          printf("ADD\n");
+          return (Int_codigo(expr->izquierda) + Int_codigo(expr->derecha));
           break;
         case '*':
-          Int_codigo(expr->izquierda) * Int_codigo(expr->derecha);
+          return (Int_codigo(expr->izquierda) + Int_codigo(expr->derecha));
           break;
       }
       break;
@@ -47,6 +48,7 @@ switch(expr->tipo) {
 
 
 void Procesar(nodo_AST *codigoi){
-  //Gen_codigo_expresion(codigoi);
-  printf("%d",Int_codigo(codigoi));
+  printf("%d\n",Int_codigo(codigoi));
+  //printf("%d\n",Int_codigo(codigoi));
 }
+
