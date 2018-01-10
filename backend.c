@@ -35,10 +35,10 @@ switch(expr->tipo) {
       switch (expr->oper) {
         case '+':
           //printf("ADD\n");
-          return Gen_codigo_expresion(expr->izquierda) + Gen_codigo_expresion(expr->derecha);
+          Int_codigo(expr->izquierda) + Int_codigo(expr->derecha);
           break;
         case '*':
-          return Gen_codigo_expresion(expr->izquierda) * Gen_codigo_expresion(expr->derecha);
+          Int_codigo(expr->izquierda) * Int_codigo(expr->derecha);
           break;
       }
       break;
